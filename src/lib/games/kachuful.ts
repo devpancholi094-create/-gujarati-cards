@@ -55,7 +55,7 @@ export function initKachuFul(playerIds: string[]): KachuFulState {
     hands: {},
     trump: 'spades',
     bids: {},
-    tricksTaken: Object.fromEntries(playerIds.map(id => [id, 0])),
+  bidOrder: playerIds => [...playerIds.slice(leaderIdx), ...playerIds.slice(0, leaderIdx)],
     currentTrick: [],
     currentPlayer: playerIds[0],
     ledSuit: null,
